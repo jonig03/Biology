@@ -1,0 +1,82 @@
+.quiz {
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.quizContainer {
+  text-align: center;
+}
+
+.quizQuestion {
+  color: white;
+  background: 00000099;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.answerContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.answerButton {
+  flex-grow: 1;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 0 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .btn {
+    margin: 0 1em 2em;
+  }
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-1 {
+  font-weight: 100;
+  background-color: #42887e;
+}
+.btn-1 svg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.btn-1 rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
+
+.btn-1:hover {
+  background: #05404e;
+  font-weight: 900;
+}
+.btn-1:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+button {
+  border: 0;
+}

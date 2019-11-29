@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "Which cell feature is responsible for making proteins?": [
+        {
+          "answer": "lysosomes",
+          "correct": false,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "ribosomes.",
+          "correct": true,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "mitochondria.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 1
+    },
+    {
+      "What is the name of the jelly-like substance that is inside the cell?": [
+        {
+          "answer": "cytoplasm.",
+          "correct": true,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "ectoplasm.",
+          "correct": false,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "cytokinesis.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 2
+    },
+    {
+      "What cell feature is responsible for powering the cell?": [
+        {
+          "answer": "endoplasmic reticulum",
+          "correct": false,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "golgi apparatus.",
+          "correct": false,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "mitochondria.",
+          "correct": true,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 3
+    },
+    {
+      "Where in the cell does DNA replication take place?": [
+        {
+          "answer": "ribosomes.",
+          "correct": false,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "nucleus",
+          "correct": true,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "nucleolus.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 4
+    },
+    {
+      "What is one major feature that plant cells have that animal cells do not?": [
+        {
+          "answer": "lysosome",
+          "correct": false,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "cell wall.",
+          "correct": true,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "cell membrane.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 5
+    },
+    {
+      "Which cell feature transports ribosomes?": [
+        {
+          "answer": "endoplasmic reticulum",
+          "correct": true,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "golgi apparatus.",
+          "correct": false,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "mitochondria.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 6
+    },
+    {
+      "The plant cell structure where photosynthesis takes place is called...?": [
+        {
+          "answer": "chloroplast",
+          "correct": true,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "chlorophyll.",
+          "correct": false,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "vacuole.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 7
+    },
+    {
+      "What cell feature is responsible for storing water?": [
+        {
+          "answer": "mitochondria",
+          "correct": true,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "lysosome.",
+          "correct": false,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "vacuole.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 8
+    },
+    {
+      "What cell feature is responsible for storing water?": [
+        {
+          "answer": "mitochondria",
+          "correct": false,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "lysosome.",
+          "correct": true,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "vacuole.",
+          "correct": false,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 8
+    },
+    {
+      "What cell feature contains digestive enzymes which breaks things down?": [
+        {
+          "answer": "lysosome",
+          "correct": false,
+          "numberAnswer": 0
+        },
+        {
+          "answer": "ribosomes.",
+          "correct": false,
+          "numberAnswer": 1
+        },
+        {
+          "answer": "vacuoles.",
+          "correct": true,
+          "numberAnswer": 2
+        }
+      ],
+      "questionNumber": 9
+    }
+  ]
+}
