@@ -8,8 +8,6 @@
 }
 
 .quizQuestion {
-  color: white;
-  background: 00000099;
   padding-left: 6px;
   padding-right: 6px;
 }
@@ -26,7 +24,6 @@
 }
 
 .btn {
-  color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 400;
@@ -49,7 +46,6 @@
 
 .btn-1 {
   font-weight: 100;
-  background-color: #42887e;
 }
 .btn-1 svg {
   height: 100%;
@@ -60,14 +56,13 @@
 }
 .btn-1 rect {
   fill: none;
-  stroke: #fff;
+  stroke: #343a40;
   stroke-width: 2;
   stroke-dasharray: 422, 0;
   transition: all 0.35s linear;
 }
 
 .btn-1:hover {
-  background: #05404e;
   font-weight: 900;
 }
 .btn-1:hover rect {

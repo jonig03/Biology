@@ -2,7 +2,8 @@
   {
     "name": "cell",
     "studied": false,
-    "id": 1
+    "id": 1,
+    "icon": "https://www.svgrepo.com/show/15360/biology.svg"
   },
   {
     "name": "Homeostasis",

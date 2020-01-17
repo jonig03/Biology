@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import rootReducer from "./redux/reducers/";
 import { Provider } from "react-redux";
+import { CookiesProvider } from "react-cookie";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // import topicLearned from "./redux/actions/studyProgress";
@@ -26,7 +27,9 @@ store.subscribe(render);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <CookiesProvider>
+      <App />
+    </CookiesProvider>
   </Provider>,
   document.getElementById("root")
 );

@@ -1,21 +1,24 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const uri =
+  "mongodb+srv://joni:qwe@bilologyusers-scsjk.mongodb.net/test?retryWrites=true&w=majority";
+const app = express();
+const port = process.env.PORT || 5000;
+const fileUpload = require("express-fileupload");
 
 require("dotenv").config();
 
-const app = express();
-const port = process.env.PORT || 5000;
-
 app.use(cors());
 app.use(express.json());
+app.use(fileUpload());
 
-const uri =
-  "mongodb+srv://joni:qwe@cluster0-dzows.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.Promise = global.Promise;
+
 mongoose.connect(uri, {
   useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true
+  useCreateIndex: true
+  // useUnifiedTopology: true
 });
 
 const connection = mongoose.connection;
@@ -26,8 +29,10 @@ connection.once("open", () => {
 });
 
 const userRouter = require("./routes/users");
+const quizRouter = require("./routes/quiz");
 
 app.use("/users", userRouter);
+app.use("/quiz", quizRouter);
 
 app.listen(port, () => {
   console.log("App is listening on port " + port);

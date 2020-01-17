@@ -1,0 +1,16 @@
+.topic {
+  min-height: 66px;
+  width: 23%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06);
+  color: #384047;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.topic:first-child {
+  margin-left: 0;
+}

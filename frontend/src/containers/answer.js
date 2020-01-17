@@ -7,7 +7,7 @@ class Answer extends Component {
     return (
       <button
         className="btn btn-1"
-        key={answerData.numberAnswer}
+        // key={answerData.numberAnswer}
         onClick={() => {
           handleClick(this.props.answerData);
         }}

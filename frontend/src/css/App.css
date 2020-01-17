@@ -1,24 +1,18 @@
 body,
 html {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-family: sans-serif;
   margin: 0;
 }
 
 body {
-  background: url("../media/monsters/curiuosMonster.jpg");
+  background: url("../media/landscapes/mountains_river_sun.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
-header {
-  background-color: white;
-  height: 50px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-nav {
+#mainNav {
   margin-left: auto;
   display: flex !important;
 }
@@ -27,16 +21,11 @@ nav {
   margin-left: 10px;
 }
 
-.container {
-  width: 70%;
-  margin: auto;
-  height: 100%;
-}
-
-.containerHeader {
+.flexContainerHandler {
   display: flex;
   align-items: center;
   flex-direction: row;
+  height: 100%;
 }
 
 h1 {
@@ -45,4 +34,37 @@ h1 {
 
 #root {
   height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.container-main-section {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  min-height: calc(90% - 56px);
+  padding-top: 1rem;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-bottom: 1rem;
+}
+
+input:focus {
+  border-color: rgba(126, 239, 104, 0.8) !important;
+}
+
+.kidLearningSVG {
+  height: 30%;
+  width: 30%;
+}
+
+.badgeBlueColor {
+  background-color: #3e5c7a;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.w-6 {
+  width: 6% !important;
 }
