@@ -1,0 +1,19 @@
+.mixed-box {
+  height: 300px;
+}
+
+.course-tags {
+  border-bottom: 2px solid #f0f2f4;
+}
+
+.course-info {
+  width: 70%;
+}
+
+.course-auther {
+  width: 30%;
+}
+
+.subject-title {
+  font-size: 20px;
+}

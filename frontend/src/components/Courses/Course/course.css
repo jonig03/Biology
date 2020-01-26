@@ -1,0 +1,32 @@
+.progress-course {
+  height: 60px;
+}
+/* 
+.dividerSteps {
+    width: 
+} */
+
+.steps-course {
+  height: calc(100% - 15px);
+}
+
+.steps-course ul {
+  height: 100%;
+  justify-content: space-between;
+}
+
+.step {
+  z-index: 100;
+}
+
+.course-icon {
+  cursor: pointer;
+}
+
+.course-section {
+  background-color: #edeff0;
+}
+
+.sub-title-course {
+  font-size: 18px;
+}

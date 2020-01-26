@@ -4,17 +4,22 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./css/App.css";
 
 import axios from "axios";
+import io from "socket.io-client";
 import Game from "./components/game";
 import Home from "./containers/home";
 import Header from "./containers/header";
 import SignUp from "./components/sign-up";
 import LogIn from "./components/log-in";
-import { useSelector } from "react-redux";
 import Profile from "./components/profile";
 import QuizPage from "./containers/quizPage";
 import CreateQuiz from "./components/createQuiz";
+import { useSelector } from "react-redux";
+import ReviewCourse from "./components/Courses/reviewCourse";
 import StudyProgress from "./components/studyProgress";
-import StartLearningPage from "./components/startLearningPage";
+import StartLearningPage from "./components/Courses/Topics/startLearningPage";
+import Course from "./components/Courses/Course/course";
+import CoursesList from "./components/Courses/CoursesList";
+
 import BiologyHistoryPage from "./components/biologyHistoryPage";
 
 import { connect } from "react-redux";
@@ -23,11 +28,17 @@ import * as authenticateAction from "./redux/actions/authenticated.js";
 import Profiles from "./components/profiles";
 import ProfileMember from "./components/memberProfile";
 
+const ENDPOINT = "localhost:5000/";
+let socket;
+
 class App extends Component {
   state = {
     userID: ""
   };
   componentDidMount() {
+    socket = io(ENDPOINT);
+    console.log(socket);
+    socket.emit("join", { message: "QWe" });
     axios({
       method: "get",
       url: "http://localhost:5000/users/authenticated",
@@ -50,6 +61,12 @@ class App extends Component {
           let updatedState = this.state;
           updatedState.userID = userID;
           this.setState(updatedState);
+
+          socket.emit("online", { message: "here" }, error => {
+            if (error) {
+              alert(error);
+            }
+          });
         }
       })
       .catch(err => {
@@ -67,15 +84,23 @@ class App extends Component {
               <Route path="/" exact>
                 <Home userID={this.state.userID} />
               </Route>
-
+              <Route path="/startLearning/:topicName/:courseName" exact>
+                <ReviewCourse />
+              </Route>
+              <Route path="/startLearning/:topicName" exact>
+                <CoursesList />
+              </Route>
+              <Route path="/startLearning" exact>
+                <StartLearningPage />
+              </Route>
               <Route path="/profiles">
                 <Profiles />
               </Route>
               <Route path="/biologyHistory">
                 <BiologyHistoryPage />
               </Route>
-              <Route path="/startLearning">
-                <StartLearningPage />
+              <Route path="/startLearning/:topicName/:courseName/introduction">
+                <Course />
               </Route>
               <Route path="/studyProgress">
                 <StudyProgress />

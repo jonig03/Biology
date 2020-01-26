@@ -11,6 +11,7 @@ const ProfileMember = () => {
   const [err, setErr] = useState({ isErr: false, message: "" });
   const [avatar, setAvatar] = useState();
   let { username } = useParams();
+
   console.log(useParams());
   useEffect(() => {
     console.log(username);

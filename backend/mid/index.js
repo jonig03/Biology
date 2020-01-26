@@ -1,4 +1,4 @@
-module.exports = const checkToken = (req, res, next) => {
+const checkToken = (req, res, next) => {
   const header = req.headers["authorization"];
 
   if (typeof header !== "undefined") {
@@ -12,3 +12,5 @@ module.exports = const checkToken = (req, res, next) => {
     res.sendStatus(403);
   }
 };
+
+module.exports = checkToken;

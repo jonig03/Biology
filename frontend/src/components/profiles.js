@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "../css/topics/index.css";
-import "../css/topics/topics.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import { ReactComponent as Team } from "../svg/team.svg";

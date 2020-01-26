@@ -68,3 +68,7 @@ input:focus {
 .w-6 {
   width: 6% !important;
 }
+
+.icon {
+  width: 25px !important;
+}

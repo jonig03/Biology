@@ -192,7 +192,6 @@ router.get("/:username", (req, res) => {
   //Get the param username from client
   const username = req.params.username;
   //Query the user in DB
-  console.log(username);
   User.findOne({ username }, (err, user) => {
     //If user can't be found, just in case.
     if (!user || user === null) {
