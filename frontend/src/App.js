@@ -99,7 +99,7 @@ class App extends Component {
               <Route path="/biologyHistory">
                 <BiologyHistoryPage />
               </Route>
-              <Route path="/startLearning/:topicName/:courseName/introduction">
+              <Route path="/startLearning/:topicName/:courseName/:stageCourse">
                 <Course />
               </Route>
               <Route path="/studyProgress">

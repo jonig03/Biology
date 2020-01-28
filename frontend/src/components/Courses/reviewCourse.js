@@ -33,9 +33,10 @@ const ReviewCourse = () => {
           <h1 className="mb-0">Cell Organs</h1>
           <h4 className="text-white-50">40-min Reading Course</h4>
           <button type="button" className="btn btn-primary btn-light text-dark">
-            <Link className="text-dark" to={`${courseName}/`}>
+            {/* <Link className="text-dark" to={`/${courseName}`}>
               Start Course
-            </Link>
+            </Link> */}
+            <a href={`${courseName}/qwe`}>Start Course</a>
           </button>
         </div>
         <div className="container">

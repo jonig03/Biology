@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import {
   TextField,
   Container,
@@ -13,10 +12,11 @@ import {
 } from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CoursesList = () => {
   const [CoursesList, setCoursesList] = useState([]);
+  console.log(useParams());
   useEffect(() => {
     //Ask from server course details
     fetch("http://localhost:5000/courses/")

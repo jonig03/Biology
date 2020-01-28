@@ -1,35 +1,76 @@
 import React, { useState, useEffect } from "react";
 
-import { Divider, Tooltip, Container } from "@material-ui/core";
-import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
+import {
+  Divider,
+  Tooltip,
+  Container,
+  CircularProgress
+} from "@material-ui/core";
 import LocalLibraryOutlinedIcon from "@material-ui/icons/LocalLibraryOutlined";
 import { LinearProgress } from "@material-ui/core";
 
 import "./course.css";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import HeaderCourse from "./components/header";
 
 const Course = () => {
-  const [Introduction, setIntroduction] = useState(null);
+  const [Content, setContent] = useState(null);
+  const [IsErr, setIsErr] = useState(null);
+  const { stageCourse, topicName, courseName } = useParams();
+  const [IsLoggedIn, setLoggedIn] = useState(null);
+  const [completed, setCompleted] = useState(50);
+  let steps = [];
+  const amountSteps = 4;
+
   useEffect(() => {
     //Ask from server course details
-    fetch("http://localhost:5000/courses/introduction")
+    // axios({
+    //   method: "get",
+    //   url: `http://localhost:5000/courses/${courseName}/config`
+    // }).then(res => {
+    //   const { data } = res;
+    //   console.log(res);
+    // });
+    axios({
+      method: "get",
+      url: `http://localhost:5000/courses/${topicName}/${courseName}/${stageCourse}`,
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("BiologyPen")}`
+      }
+    })
       .then(async res => {
         // const data = await res.json();
-        const text = await res.text();
-        console.log(text);
+        console.log(res);
+        if (res.status === 404) {
+          setIsErr(res.statusText);
+          setLoggedIn(false);
+          console.log(IsLoggedIn);
+
+          return false;
+        } else if (res.status === 403) {
+          setLoggedIn(false);
+          return false;
+        }
+        setLoggedIn(true);
+        const text = await res.data;
         //Update state, Change line spaces to invisible <br />.
-        setIntroduction(
+        setContent(
           Array.from(text.split("\n"), item =>
             item.length === 1 ? <br /> : <div>{item}</div>
           )
         );
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.log(err);
+        setLoggedIn(true);
+        setIsErr(true);
+        if (err.status === 404) {
+          setLoggedIn(true);
+          console.log(err);
+        }
+      });
   }, []);
-
-  const [completed, setCompleted] = useState(50);
-  let steps = [];
-  const amountSteps = 4;
-
   for (let index = 0; index < amountSteps; index++) {
     steps[index] = (
       <Tooltip title="ToolTip">
@@ -46,19 +87,18 @@ const Course = () => {
       </Tooltip>
     );
   }
-  console.log(Introduction);
-
+  if (IsLoggedIn === null) return <CircularProgress />;
+  console.log(IsErr);
+  if (IsErr) {
+    return (
+      <h1>
+        {IsErr} <br /> Please navigate back to review course and try again.
+      </h1>
+    );
+  }
   return (
     <React.Fragment>
-      <header className="pb-2">
-        <button
-          type="button"
-          className="bg-white rounded d-flex align-items-center"
-        >
-          <KeyboardBackspaceIcon className="text-dark" />
-          Back
-        </button>
-      </header>
+      <HeaderCourse />
       <section className="rounded course-section border border-dark">
         <div className="progress-course bg-dark rounded">
           <LinearProgress
@@ -69,7 +109,11 @@ const Course = () => {
           <div className="steps-course container">
             <Divider
               className="dividerSteps bg-light"
-              style={{ width: "100%", position: "relative", top: "25px" }}
+              style={{
+                width: "100%",
+                position: "relative",
+                top: "25px"
+              }}
             />
             <ul className="d-flex flex-direction-row p-0 align-items-center text-light m-0 steps-list-course">
               {steps}
@@ -77,7 +121,7 @@ const Course = () => {
           </div>
         </div>
         <div className="containerContentCourse pt-4">
-          {!Introduction ? (
+          {!Content ? (
             <div className="container p-2">
               <LinearProgress />
             </div>
@@ -90,22 +134,8 @@ const Course = () => {
                 <h2>Cell Membrane</h2>
               </header>
 
-              <div>{Introduction}</div>
+              <div>{Content}</div>
             </Container>
-
-            // <React.Fragment>
-            //   <h4 className="sub-title-course text-secondary">
-            //     What we will be learning?
-            //   </h4>
-            //   <h2>What is it?</h2>
-            //   <button
-            //     type="button"
-            //     className="btn"
-            //     onClick={() => setCompleted(100)}
-            //   >
-            //     Complete
-            //   </button>
-            // </React.Fragment>
           )}
         </div>
       </section>
